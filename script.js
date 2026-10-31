@@ -1,5 +1,6 @@
 let totalAllumettes = 50;
 let joueurCourant = 1;
+let nombreJoueurs = Number(prompt("Combien de joueurs êtes vous ?"));
 
 const retireAllumettes = (oterQuantite) => {
   totalAllumettes = totalAllumettes - oterQuantite;
@@ -10,12 +11,13 @@ const choixValide = (nombre) => {
 };
 
 const changerJoueur = () => {
-  if (joueurCourant === 1) {
-    joueurCourant = 2;
+  if (joueurCourant === nombreJoueurs) {
+    joueurCourant = 1 ;
   } else {
-    joueurCourant = 1;
+    joueurCourant++;
   }
 };
+
 const jouer = () => {
   while (totalAllumettes >= 1) {
     const combienAllumettes = Number(
@@ -38,3 +40,5 @@ const jouer = () => {
 
 
 }
+
+jouer();
